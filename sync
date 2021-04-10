@@ -19,3 +19,6 @@ git clone https://bitbucket.org/reisshxx/vendor_ugg vendor/xiaomi/ugg
 git clone https://bitbucket.org/reisshxx/vendor_ulysse-common vendor/xiaomi/ulysse-common
 git clone https://github.com/adislice/android_kernel_xiaomi_msm8937/ --depth=1 -b em kernel/xiaomi/ulysse
 
+rm -rf vendor/qcom/opensource/power
+git clone https://github.com/Havoc-OS/android_vendor_qcom_opensource_power -b eleven vendor/qcom/opensource/power
+
