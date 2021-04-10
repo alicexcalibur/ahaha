@@ -22,3 +22,4 @@ git clone https://github.com/adislice/android_kernel_xiaomi_msm8937/ --depth=1 -
 rm -rf vendor/qcom/opensource/power
 git clone https://github.com/Havoc-OS/android_vendor_qcom_opensource_power -b eleven vendor/qcom/opensource/power
 
+cp kernel/xiaomi/ulysse/arch/arm64/configs/mi8* kernel/xiaomi/ulysse/arch/arm64/configs/ulysse_defconfig
