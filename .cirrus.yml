@@ -8,7 +8,7 @@ env: # Environment variables to pass to all tasks
     tgbot_token: "ENCRYPTED[90ce356df7b93399aae81395a80e6cb8f91c1bad15d7db7067d9bbc47a88f585233e6a25f21941893bd0ba1496add232]"
 
 task:
-    name: bootleg # Project name
+    name: bootleggers # Project name
     #use_compute_credits: $CIRRUS_USER_COLLABORATOR == 'true'
     timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
