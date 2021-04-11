@@ -49,7 +49,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 
-mka bacon -j8 \
+mka bacon -j10 \
 	&& file_zip=$(ls out/target/product/ulysse/*ulysse*.zip -t | head -n1) && tg $id "Build Succeed!
 $file_zip" \
 	|| tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Build Failed" && tg $id "$send_shell" && ccache -s && sleep 2h
