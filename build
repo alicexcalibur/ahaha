@@ -50,7 +50,22 @@ make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 
 mka bacon -j8 \
-	&& send_zip=$(up out/target/product/ulysse/*zip) && tg $id "Build Succeed!
-$send_zip" \
+	&& file_zip=$(ls out/target/product/ulysse/*ulysse*.zip -t | head -n1) && tg $id "Build Succeed!
+$file_zip" \
 	|| tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Build Failed" && tg $id "$send_shell" && ccache -s && sleep 2h
+
+if [[ ! -d ~/.config/rclone ]]
+then
+    mkdir ~/.config/rclone
+fi
+
+echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
+
+time rclone copy $file_zip gdrive:rom -P # apon is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setupped p>
+zip_name=$(basename $file_zip)
+link_rom=$(rclone link gdrive:rom/$zip_name)
+echo $file_zip
+echo $zip_name
+echo $link_rom
+tg $id "Link : $link_rom"
 ccache -s # Let's print ccache statistics finally
