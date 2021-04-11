@@ -23,3 +23,12 @@ rm -rf vendor/qcom/opensource/power
 git clone https://github.com/Havoc-OS/android_vendor_qcom_opensource_power -b eleven vendor/qcom/opensource/power
 
 cp kernel/xiaomi/ulysse/arch/arm64/configs/mi8* kernel/xiaomi/ulysse/arch/arm64/configs/ulysse_defconfig
+
+rm -rf hardware/qcom-caf/wlan
+git clone https://github.com/LineageOS/android_hardware_qcom_wlan -b lineage-18.1-caf hardware/qcom-caf/wlan
+
+rm -rf vendor/qcom/opensource/dataservices
+git clone https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_dataservices -b 11 vendor/qcom/opensource/dataservices
+
+rm -rf vendor/qcom/opensource/data-ipa-cfg-mgr
+git clone https://github.com/LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr -b vendor/qcom/opensource/data-ipa-cfg-mgr
