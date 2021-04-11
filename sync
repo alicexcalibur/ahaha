@@ -31,4 +31,4 @@ rm -rf vendor/qcom/opensource/dataservices
 git clone https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_dataservices -b 11 vendor/qcom/opensource/dataservices
 
 rm -rf vendor/qcom/opensource/data-ipa-cfg-mgr
-git clone https://github.com/LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr -b vendor/qcom/opensource/data-ipa-cfg-mgr
+git clone https://github.com/LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr vendor/qcom/opensource/data-ipa-cfg-mgr
